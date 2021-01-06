@@ -1,11 +1,11 @@
 import { Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller('user')
+@Controller('users')
 export class AppController {
   constructor(private readonly service: AppService) {}
 
-  @Post('/')
+  @Post()
   create() {
     return this.service.createUser();
   }

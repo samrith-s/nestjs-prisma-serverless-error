@@ -6,17 +6,14 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   profile: ${opt:profile, 'prisma-nestjs-serverless-demo'}
-  apiGateway:
-    shouldStartNameWithService: true
 
 functions:
-  graphql:
+  user:
     handler: dist/main.handler
     events:
       - http:
           path: /users/{any+}
           method: any
-          cors: true
 
 plugins:
   - serverless-dotenv-plugin
@@ -29,8 +26,6 @@ plugins:
 # this is added to decrease the output size to prevent size related issues
 package:
   include:
-    - '!yarn.lock'
-    - '!node_modules/aws-sdk/**'
     - 'schema.prisma'
 
 custom:

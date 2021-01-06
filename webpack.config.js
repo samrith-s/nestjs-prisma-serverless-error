@@ -10,7 +10,7 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 
 const configFile = resolve(__dirname, './tsconfig.build.json');
 
-const outputDir = resolve(__dirname, '../.webpack');
+const outputDir = resolve(__dirname, './.webpack');
 
 module.exports = {
   // mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
